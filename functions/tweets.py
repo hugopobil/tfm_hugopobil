@@ -13,11 +13,11 @@ def clean_tweets(twt):
 
 
 # Subjectivity
-def get_sub(tweet):
+def get_subjectivity(tweet):
     return TextBlob(tweet).sentiment.subjectivity
 
 
 # Polarity
-def get_pol(tweet):
+def get_polarity(tweet):
     return TextBlob(tweet).sentiment.polarity
 
