@@ -16,21 +16,6 @@ def plot_correlation(tweets, bitcoin, method):
     plt.show()
 
 
-# plotting two axes and comparing two datasets
-def plot_two_axes(tweets, bitcoin):
-    fig, ax1 = plt.subplots(figsize=(20, 10))
-    ax1.set_title('btc evolution compared to tweets sentiment', fontsize=18)
-    ax1.tick_params(labelsize=14)
-    ax2 = ax1.twinx()
-    ax1.plot(tweets, 'g-')
-    ax2.plot(bitcoin, 'b-')
-    # ax2.axis_date(btc_usd_grouped.index, btc_usd_grouped, 'b-')
-
-    ax1.set_ylabel('sentiment', fontsize=16)
-    ax2.set_ylabel('bitcoin', fontsize=16)
-    plt.show()
-
-
 def normalization_plot(tweets, price):
     min_max_scaler = preprocessing.StandardScaler()
     score_scaled = min_max_scaler.fit_transform(tweets['score'].values.reshape(-1, 1))
