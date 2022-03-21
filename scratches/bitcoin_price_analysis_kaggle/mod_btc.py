@@ -23,7 +23,7 @@ def plot_correlation(tweets, bitcoin, method):
 
 def normalization_plot(tweets, price):
     min_max_scaler = preprocessing.StandardScaler()
-    score_scaled = min_max_scaler.fit_transform(tweets['score'].values.reshape(-1, 1))
+    score_scaled = min_max_scaler.fit_transform(tweets['scores'].values.reshape(-1, 1))
     tweets['normalized_score'] = score_scaled
     # crypto_used_grouped_scaled = min_max_scaler.fit_transform(crypto_usd_grouped.values.reshape(-1,1))
     crypto_used_grouped_scaled = price / max(price.max(), abs(price.min()))
