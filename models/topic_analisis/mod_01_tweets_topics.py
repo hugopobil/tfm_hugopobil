@@ -68,7 +68,7 @@ def get_daily_counts(topic_no, topics, tweets):
     topic_id = topics[topics.topic_no == topic_no].index[0]
     daily_counts = (
         tweets[tweets.topic_id == topic_id]
-            .pipe(lambda df: df.groupby(df.date_clean.dt.floor('d'))['id'].count())
+            .pipe(lambda df: df.groupby(df.topic_id)['index'].count())
     )
     return daily_counts
 
