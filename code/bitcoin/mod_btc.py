@@ -16,8 +16,8 @@ def plot_correlation(tweets, bitcoin, method):
     correlation = [crosscorr(tweets, bitcoin, lag=i, method=method) for i in range(-20, 20)]
     plt.plot(range(-20, 20), correlation)
     plt.title(f"{method} cross-correlation")
-    plt.xlabel("lag")
-    plt.ylabel("correlation")
+    plt.xlabel("Bitcoin")
+    plt.ylabel("Tweets")
     plt.show()
 
 
